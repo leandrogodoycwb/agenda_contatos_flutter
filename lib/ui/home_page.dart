@@ -35,15 +35,15 @@ class _HomePageState extends State<HomePage> {
         actions: [
           PopupMenuButton<OrderOptions>(
             itemBuilder: ((context) => <PopupMenuEntry<OrderOptions>>[
-              const PopupMenuItem<OrderOptions>(
-                child: Text("Ordenar de A-Z"),
-                value: OrderOptions.orderaz,
-              ),
-              const PopupMenuItem<OrderOptions>(
-                child: Text("Ordenar de Z-A"),
-                value: OrderOptions.orderza,
-              )
-            ]),
+                  const PopupMenuItem<OrderOptions>(
+                    child: Text("Ordenar de A-Z"),
+                    value: OrderOptions.orderaz,
+                  ),
+                  const PopupMenuItem<OrderOptions>(
+                    child: Text("Ordenar de Z-A"),
+                    value: OrderOptions.orderza,
+                  )
+                ]),
             onSelected: _orderList,
           )
         ],
@@ -83,9 +83,7 @@ class _HomePageState extends State<HomePage> {
                         height: 80,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: img,
-                          ),
+                          image: DecorationImage(image: img, fit: BoxFit.cover),
                         ),
                       );
                     } else {
@@ -220,8 +218,8 @@ class _HomePageState extends State<HomePage> {
         context,
         MaterialPageRoute(
             builder: (context) => ContactPage(
-              contact: contact,
-            )));
+                  contact: contact,
+                )));
     if (recContact != null) {
       if (contact != null) {
         await helper.updateContact(recContact);
